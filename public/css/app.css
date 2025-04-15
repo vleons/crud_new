@@ -1,0 +1,309 @@
+/* Добавьте эти стили в конец файла */
+
+/* Центрирование таблицы */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Стили для таблицы */
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin: 20px 0;
+}
+
+.data-table th, .data-table td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+/* Material кнопка */
+.mdc-button {
+  position: relative;
+  overflow: hidden;
+  padding: 0 16px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6200ee;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.mdc-button:hover {
+  background-color: #3700b3;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.mdc-button i {
+  margin-right: 8px;
+}
+
+/* Контейнер для кнопки */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Иконки действий */
+.action-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-icon {
+  color: #5f6368;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.action-icon:hover {
+  color: #6200ee;
+}
+
+/* Добавьте эти стили в конец файла */
+
+/* Центрирование таблицы */
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Стили для таблицы */
+  .data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    margin: 20px 0;
+  }
+  
+  .data-table th, .data-table td {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  /* Material кнопка */
+  .mdc-button {
+    position: relative;
+    overflow: hidden;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6200ee;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+  }
+  
+  .mdc-button:hover {
+    background-color: #3700b3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .mdc-button i {
+    margin-right: 8px;
+  }
+  
+  /* Контейнер для кнопки */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  
+  /* Иконки действий */
+  .action-icons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .action-icon {
+    color: #5f6368;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .action-icon:hover {
+    color: #6200ee;
+  }
+
+  /* Основные стили */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Добавьте остальные стили из предыдущих примеров */
+
+/* Material Design Form Styles */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: #212121;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #424242;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  border-color: #6200ea;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(98, 0, 234, 0.2);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+/* Material Buttons */
+.mdc-button {
+  position: relative;
+  overflow: hidden;
+  padding: 0 24px;
+  height: 48px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.mdc-button--raised {
+  background-color: #6200ea;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.mdc-button--raised:hover {
+  background-color: #7c4dff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.mdc-button--outlined {
+  background-color: transparent;
+  border: 1px solid #6200ea;
+  color: #6200ea;
+}
+
+.mdc-button--outlined:hover {
+  background-color: rgba(98, 0, 234, 0.04);
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  justify-content: flex-end;
+}
+
+/* File Upload */
+.file-upload {
+  margin-top: 16px;
+}
+
+.file-upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-upload-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-name {
+  margin-left: 16px;
+  font-size: 14px;
+  color: #616161;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 32px 0;
+}

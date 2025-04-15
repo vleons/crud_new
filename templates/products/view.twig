@@ -1,0 +1,78 @@
+{% extends 'base.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+{% block header %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="product-card">
+    <div class="product-image-container">
+      {% if product.image_path %}
+        <img src="{{ product.image_path }}" alt="{{ product.name }}" class="product-image">
+      {% else %}
+        <div class="image-placeholder">
+          <i class="material-icons">image</i>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="product-details">
+      <div class="detail-item">
+        <span class="detail-label">ID:</span>
+        <span class="detail-value">{{ product.id }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Цена:</span>
+        <span class="detail-value">{{ product.price|number_format(2, ',', ' ') }} ₽</span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Акция:</span>
+        <span class="detail-value">
+          {% if product.sale_id == 1 %}
+            <span style="color:#4caf50;">33%</span>
+          {% elseif product.sale_id == 2 %}
+            <span style="color:#4caf50;">50%</span>
+          {% else %}
+            Нет
+          {% endif %}
+        </span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="detail-label">Свойство:</span>
+        <span class="detail-value">
+          {% if product.property_id == 1 %}
+            Жаропонижающее
+          {% elseif product.property_id == 2 %}
+            Противовоспалительное
+          {% elseif product.property_id == 3 %}
+            Обезболивающее
+          {% endif %}
+        </span>
+      </div>
+      
+      <div class="detail-item full-width">
+        <span class="detail-label">Описание:</span>
+        <p class="detail-value">{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <a href="/products/{{ product.id }}/edit" class="mdc-button mdc-button--raised">
+      <i class="material-icons">edit</i>
+      Редактировать
+    </a>
+    <a href="/products/{{ product.id }}/delete" class="mdc-button mdc-button--outlined" onclick="return confirm('Удалить этот продукт?')">
+      <i class="material-icons">delete</i>
+      Удалить
+    </a>
+    <a href="/" class="mdc-button">
+      <i class="material-icons">arrow_back</i>
+      Назад
+    </a>
+  </div>
+</div>
+{% endblock %}
