@@ -125,37 +125,47 @@ $app->get('/products/{id}', function($id) use ($app) {
     ]);
 });
 
-// Редактирование продукта
-$app->match('/products/{id}/edit', function(Request $request, $id) use ($app) {
+// Редактирование продукта (POST обработчик)
+$app->post('/products/{id}', function(Request $request, $id) use ($app) {
     $product = $app['db_manager']->getProductById($id);
     
     if (!$product) {
         return $app->redirect('/');
     }
     
-    if ($request->isMethod('POST')) {
-        $data = [
-            'name' => $request->get('name'),
-            'price' => (float)$request->get('price'),
-            'description' => $request->get('description'),
-            'sale_id' => $request->get('sale_id') ? (int)$request->get('sale_id') : null,
-            'property_id' => $request->get('property_id') ? (int)$request->get('property_id') : null
-        ];
-        
-        /** @var UploadedFile $image */
-        $image = $request->files->get('image');
-        
-        try {
-            $app['db_manager']->updateProduct($id, $data, $image);
-            return $app->redirect("/products/{$id}");
-        } catch (Exception $e) {
-            $error = 'Ошибка при обновлении: ' . $e->getMessage();
-        }
+    $data = [
+        'name' => $request->get('name'),
+        'price' => (float)$request->get('price'),
+        'description' => $request->get('description'),
+        'sale_id' => $request->get('sale_id') ? (int)$request->get('sale_id') : null,
+        'property_id' => $request->get('property_id') ? (int)$request->get('property_id') : null
+    ];
+    
+    /** @var UploadedFile $image */
+    $image = $request->files->get('image');
+    
+    try {
+        $app['db_manager']->updateProduct($id, $data, $image);
+        return $app->redirect("/products/{$id}");
+    } catch (Exception $e) {
+        return $app['twig']->render('products/edit.twig', [
+            'product' => $product,
+            'error' => 'Ошибка при обновлении: ' . $e->getMessage()
+        ]);
+    }
+});
+
+// Форма редактирования продукта (GET обработчик)
+$app->get('/products/{id}/edit', function($id) use ($app) {
+    $product = $app['db_manager']->getProductById($id);
+    
+    if (!$product) {
+        return $app->redirect('/');
     }
     
     return $app['twig']->render('products/edit.twig', [
         'product' => $product,
-        'error' => $error ?? null
+        'error' => null // Добавляем переменную error со значением null
     ]);
 });
 
